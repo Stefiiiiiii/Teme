@@ -98,3 +98,88 @@ function convertCelsiusToFahrenheit(num) {
 }
 
 console.log(convertCelsiusToFahrenheit(celsiusConvert));
+
+function find_FirstNotRepeatChar(str) {
+  var arra1 = str.split(" ");
+  var result = "";
+  var ctr = 0;
+
+  for (var x = 0; x < arra1.lenght; x++) {
+    ctr = 0;
+
+    for (var y = 0; y < arra1.lenght; y++) {
+      if (arra1[x] == arra1[y]) {
+        ctr = ctr + 1;
+      }
+    }
+    if (ctr < 2) {
+      result = arra1[x];
+      break;
+    }
+  }
+  return result;
+}
+
+//ex 6
+const PI = 3.14;
+function getSurfaceCircle(radius) {
+  var surfaceCircle = PI * Math.pow(radius, 2);
+  return surfaceCircle;
+}
+
+console.log("Raza cercului este: " + getSurfaceCircle(3));
+
+//ex 7
+
+function reverseNumber(num) {
+  var reverseNum = 0;
+  while (num !== 0) {
+    var lastDigit = num % 10;
+    reverseNum = reverseNum * 10 + lastDigit;
+    num = Number.parseInt(num / 10);
+  }
+  return reverseNum;
+}
+
+console.log("Numar inversat: " + reverseNumber(32243));
+
+//ex 8
+
+function palindromeNumber(num) {
+  var arrayDigits = String(num).split("");
+
+  for (var i = 0; i < arrayDigits.length / 2; i++) {
+    if (arrayDigits[i] !== arrayDigits[arrayDigits.length - i - 1]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(palindromeNumber(2332));
+
+//ex 9
+
+function randomNumber(a, b) {
+  var x = Math.floor(Math.random() * (b - a) + a);
+  //Math.floor rotunjeste in jos si il face numar intreg
+  //Math.ceil rotunjeste in sus
+  return x;
+}
+
+console.log(randomNumber(6, 50));
+
+//ex 10
+
+function getVowelsCount(str) {
+  const arrayVowels = ["a", "e", "i", "o", "u"];
+  var result = 0;
+  for (var i = 0; i < str.length; i++) {
+    if (arrayVowels.indexOf(str.charAt(i)) > -1) {
+      result++;
+    }
+  }
+  return result;
+}
+
+console.log(getVowelsCount("masina"));
