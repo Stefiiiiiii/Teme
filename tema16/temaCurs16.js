@@ -183,3 +183,12 @@ function getVowelsCount(str) {
 }
 
 console.log(getVowelsCount("masina"));
+
+function countLetters(str) {
+  return [...str].reduce((dict, letter) => {
+    dict.hasOwnProperty(letter) ? dict[letter]++ : (dict[letter] = 1);
+    return dict;
+  }, {});
+}
+
+console.log(countLetters("aabbbbcddeeeef"));
